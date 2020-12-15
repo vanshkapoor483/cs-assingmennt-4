@@ -1,0 +1,519 @@
+                                         ASSINGMENT 4
+
+1. #include<stdio.h> 
+
+int main() 
+
+{ 
+
+    int x, i=1; 
+
+    printf("enter the last value = "); 
+
+    scanf("%d", &x); 
+
+    while(i<=x) 
+
+    { 
+
+        printf("%d ", i ); 
+
+        i++; 
+
+    } 
+
+    return 0; 
+
+} 
+
+2.  #include<stdio.h> 
+
+int even(int,int); 
+
+int odd(int x, int y); 
+
+ 
+
+long main() 
+
+{ 
+
+    int fdig, ldig ,f ,l; 
+
+    
+
+    printf("enter the initial vale = "); 
+
+    scanf("%d",&fdig); 
+
+    printf("enter the finall vale = "); 
+
+    scanf("%d",&ldig); 
+
+    f=even(fdig,ldig); 
+
+    l=odd(fdig,ldig); 
+
+    return 0; 
+
+} 
+
+int even(int x, int y) 
+
+{ 
+
+    int i; 
+
+    printf("even\n"); 
+
+    i=x; 
+
+    while(i<=y) 
+
+    { 
+
+        if(i%2==0) 
+
+        { 
+
+            printf(" %d\n ", i); 
+
+        } 
+
+        i++; 
+
+    } 
+
+    printf("\n"); 
+
+} 
+
+ 
+
+int odd(int q, int w) 
+
+{ 
+
+    int i ,t; 
+
+    i=q; 
+
+    while(i<=w) 
+
+    { 
+
+        if(i%2!=0) 
+
+        { 
+
+            printf(" %d ", i); 
+
+            t=odd(i+2,w); 
+
+            break; 
+
+        } 
+
+    } 
+
+    printf("\n"); 
+
+} 
+
+3. #include<stdio.h> 
+
+int sum(int, int ); 
+
+int main() 
+
+{ 
+
+    int x, ldig,t; 
+
+    printf("enter the terminating value = "); 
+
+    scanf("%d",&ldig); 
+
+    t=sum(1,ldig); 
+
+    printf("%d",t); 
+
+    return 0; 
+
+} 
+
+int sum(int i, int y) 
+
+{ 
+
+    int z, k; 
+
+    z=y; 
+
+    while(z>=i) 
+
+    { 
+
+        k=z+sum(i,z-1); 
+
+        return (k); 
+
+        break; 
+
+    } 
+
+} 
+
+4. #include <stdio.h> 
+
+int sumOfEvenOdd(int start, int end); 
+
+ 
+
+int main() 
+
+{ 
+
+    int start, end, sum; 
+
+    printf("Enter lower limit: "); 
+
+    scanf("%d", &start); 
+
+    printf("Enter upper limit: "); 
+
+    scanf("%d", &end); 
+
+     
+
+    printf("Sum of even/odd numbers between %d to %d = %d\n", start, end, sumOfEvenOdd(start, end)); 
+
+     
+
+    return 0; 
+
+} 
+
+ 
+
+int sumOfEvenOdd(int start, int end)  
+
+{ 
+
+    if(start > end) 
+
+        return 0; 
+
+    else 
+
+        return (start + sumOfEvenOdd(start + 2, end)); 
+
+} 
+
+5. #include<stdio.h> 
+
+int main(){ 
+
+   int num,reverse_number; 
+
+ 
+
+   printf("\nEnter any number:"); 
+
+   scanf("%d",&num); 
+
+ 
+
+   reverse_number=reverse_function(num); 
+
+   printf("\nAfter reverse the no is :%d",reverse_number); 
+
+   return 0; 
+
+} 
+
+int sum=0,rem; 
+
+reverse_function(int num){ 
+
+   if(num){ 
+
+      rem=num%10; 
+
+      sum=sum*10+rem; 
+
+      reverse_function(num/10); 
+
+   } 
+
+   else 
+
+      return sum; 
+
+   return sum; 
+
+} 
+
+6. #include <stdio.h> 
+
+#include <math.h> 
+
+int reverse(int num); 
+
+int isPalindrome(int num); 
+
+ 
+
+int main() 
+
+{ 
+
+    int num; 
+
+    printf("Enter any number: "); 
+
+    scanf("%d", &num); 
+
+     
+
+    if(isPalindrome(num) == 1) 
+
+    { 
+
+        printf("%d is palindrome number.\n", num); 
+
+    } 
+
+    else 
+
+    { 
+
+        printf("%d is NOT palindrome number.\n", num); 
+
+    } 
+
+     
+
+    return 0; 
+
+} 
+
+int isPalindrome(int num) 
+
+{ 
+
+    if(num == reverse(num)) 
+
+    { 
+
+        return 1; 
+
+    } 
+
+     
+
+    return 0; 
+
+} 
+
+ 
+
+int reverse(int num) 
+
+{ 
+
+    int digit = (int)log10(num); 
+
+    if(num == 0) 
+
+        return 0; 
+
+ 
+
+    return ((num%10 * pow(10, digit)) + reverse(num/10)); 
+
+} 
+
+7. int sumOfDigits(int num); 
+
+ 
+
+int main() 
+
+{ 
+
+    int num, sum; 
+
+     
+
+    printf("Enter any number to find sum of digits: "); 
+
+    scanf("%d", &num); 
+
+     
+
+    sum = sumOfDigits(num); 
+
+    printf("Sum of digits of %d = %d", num, sum); 
+
+     
+
+    return 0; 
+
+} 
+
+ 
+
+int sumOfDigits(int num) 
+
+{ 
+
+    if(num == 0) 
+
+        return 0; 
+
+         
+
+    return ((num % 10) + sumOfDigits(num / 10)); 
+
+} 
+
+8. #include <stdio.h> 
+
+unsigned long long fibo(int num); 
+
+ 
+
+int main() 
+
+{ 
+
+    int num; 
+
+    unsigned long long fibonacci; 
+
+ 
+
+    printf("Enter any number to find nth fiboacci term: "); 
+
+    scanf("%d", &num); 
+
+     
+
+    fibonacci = fibo(num);  
+
+     
+
+    printf("%d fibonacci term is %llu", num, fibonacci); 
+
+     
+
+    return 0; 
+
+} 
+
+unsigned long long fibo(int num)  
+
+{ 
+
+    if(num == 0)  
+
+        return 0; 
+
+    else if(num == 1)  
+
+        return 1; 
+
+    else  
+
+        return fibo(num-1) + fibo(num-2);  
+
+} 
+
+9. #include <stdio.h> 
+
+long gcd(long x, long y); 
+
+int main() 
+
+{ 
+
+    int Num1, Num2; 
+
+ 
+
+    printf("Please Enter two integer Values \n"); 
+
+    scanf("%d %d", &Num1, &Num2); 
+
+ 
+
+    printf("GCD of %d and %d is = %d", Num1, Num2, gcd(Num1, Num2)); 
+
+    return 0; 
+
+} 
+
+long gcd(long x, long y)  
+
+{ 
+
+  if (y == 0) { 
+
+  return x; 
+
+  } 
+
+  else { 
+
+    return gcd(y, x % y); 
+
+  } 
+
+} 
+
+10. #include <stdio.h> 
+
+long gcd(long x, long y); 
+
+int main() 
+
+{ 
+
+    int Num1, Num2, GCD, LCM; 
+
+ 
+
+    printf("Please Enter two integer Values \n"); 
+
+    scanf("%d %d", &Num1, &Num2); 
+
+ 
+
+    GCD = gcd(Num1, Num2); 
+
+    LCM = (Num1 * Num2) / GCD; 
+
+    printf("LCM of %d and %d is = %d", Num1, Num2, LCM); 
+
+    return 0; 
+
+} 
+
+long gcd(long x, long y)  
+
+{ 
+
+  if (y == 0) { 
+
+  return x; 
+
+  } 
+
+  else { 
+
+    return gcd(y, x % y); 
+
+  } 
+
+} 
